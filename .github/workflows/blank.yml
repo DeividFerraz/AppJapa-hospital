@@ -21,8 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/appjapa-hospital:latest \
-              -f AppJapa-Hospital/Dockerfile AppJapa-Hospital
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/appjapa-hospital:latest -f AppJapa-Hospital/Dockerfile AppJapa-Hospital
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/appjapa-hospital:latest
