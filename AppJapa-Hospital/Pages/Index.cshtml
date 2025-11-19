@@ -1,0 +1,191 @@
+﻿@page
+@{
+    Layout = null; // página sem layout compartilhado, para controle total da interface
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <title>PS JAPA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/app.css" />
+</head>
+<body class="app-body">
+    <!-- Overlay de LOGIN -->
+    <div id="login-overlay" class="overlay">
+        <div class="card">
+            <h1 class="title">LOGIN</h1>
+            <label for="password-input" class="label">CONFIRME A SENHA:</label>
+            <input type="password" id="password-input" class="input" />
+            <div id="login-error" class="error-message"></div>
+            <button id="login-button" class="btn primary">ENTRAR</button>
+        </div>
+    </div>
+
+    <!-- Modal da CHAVE DINÂMICA -->
+    <div id="dynamic-key-overlay" class="overlay hidden">
+        <div class="card">
+            <h2 class="subtitle">CHAVE DINÂMICA</h2>
+            <div class="dynamic-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>7</td>
+                            <td>w</td>
+                            <td>T</td>
+                            <td>Z</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>E</td>
+                            <td>K</td>
+                            <td>#</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td>3</td>
+                            <td>T</td>
+                            <td>1</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td>E</td>
+                            <td>h</td>
+                            <td>s</td>
+                            <td>7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button id="dynamic-key-close" class="btn secondary">FECHAR</button>
+        </div>
+    </div>
+
+    <!-- APP PRINCIPAL -->
+    <div id="app-root" class="app-root hidden">
+        <header class="app-header">
+            <h1>PS JAPA</h1>
+        </header>
+
+        <main class="app-main">
+            <!-- MENU PRINCIPAL -->
+            <section id="screen-menu" class="screen">
+                <div class="screen-card">
+                    <button class="btn primary"
+                            data-action="copy"
+                            data-text="PACIENTE NÃO RESPONDEU AO CHAMADO 03 VEZES, NO MOMENTO CARACTERIZO COMO EVASÃO DO SERVIÇO DE SAÚDE.">
+                        NRC 3X
+                    </button>
+
+                    <button class="btn primary"
+                            data-action="copy"
+                            data-text="PCT VEM AO PS COM QUEIXA DE">
+                        ANAMNESE
+                    </button>
+
+                    <button class="btn primary"
+                            data-action="copy"
+                            data-text="NO MOMENTO NEGA DEMAIS QUEIXAS.
+                            AP: NEGA
+                            ALERGIA: NEGA
+                            MUC: NEGA
+                            BEG CHAAAE LOTE
+                            NEURO: ECG 15, FORÇA E SENSIBILIDADE PRESERVADA
+                            ORO: TONSILAS PALATINAS E FARÍNGEA S / SINAIS FLOGIÍSTICOS E EXUDATO
+                            AC: BRNF EM 2T S / SOPRO
+                            AR: MV+ BILAT, S / RA. S / SINAIS DE DESCONFORTO RESPIRATÓRIO
+                            ABD: PLANO, FLÁCIDO, RHA +, INDOLOR A PALPAÇÃO SUP E PROF, S / VMG, DB-
+                            MMII: PULSO+ BILAT, BPP, TEC<3 SEG, PANTURRILHAS LIVRES, SEM EDEMAS ">
+                        EXAME FÍSICO
+                    </button>
+
+                    <button class="btn primary" data-screen="cid">CID</button>
+                    <button class="btn primary" data-screen="condutas">CONDUTAS</button>
+                    <button class="btn primary" data-screen="reavaliacao">REAVALIAÇÃO</button>
+                    <button class="btn primary" data-screen="receitas">RECEITAS</button>
+                    <button class="btn primary" data-screen="farmacos">FÁRMACOS</button>
+
+                    <button class="btn primary"
+                            data-action="copy"
+                            data-text="SOLICITO AVALIAÇÃO E ACOMPANHAMENTO AMBULATORIAL">
+                        ENCAMINHAMENTO
+                    </button>
+
+                    <button class="btn primary" data-screen="links">LINKS</button>
+                    <button class="btn primary" id="btn-dynamic-key">CHAVE DINÂMICA</button>
+                </div>
+            </section>
+
+            <!-- TELA CID -->
+            <section id="screen-cid" class="screen hidden">
+                <div class="screen-card">
+                    <h2 class="subtitle">CID</h2>
+                    <div id="cid-list" class="scroll-list"></div>
+                    <button class="btn secondary" data-screen="menu">VOLTAR</button>
+                </div>
+            </section>
+
+            <!-- TELA CONDUTAS -->
+            <section id="screen-condutas" class="screen hidden">
+                <div class="screen-card">
+                    <h2 class="subtitle">CONDUTAS</h2>
+                    <div id="condutas-list" class="scroll-list"></div>
+                    <button class="btn secondary" data-screen="menu">VOLTAR</button>
+                </div>
+            </section>
+
+            <!-- TELA REAVALIAÇÃO -->
+            <section id="screen-reavaliacao" class="screen hidden">
+                <div class="screen-card">
+                    <h2 class="subtitle">REAVALIAÇÃO</h2>
+                    <div id="reavaliacao-list" class="scroll-list"></div>
+                    <button class="btn secondary" data-screen="menu">VOLTAR</button>
+                </div>
+            </section>
+
+            <!-- TELA RECEITAS -->
+            <section id="screen-receitas" class="screen hidden">
+                <div class="screen-card">
+                    <h2 class="subtitle">RECEITAS</h2>
+                    <div id="receitas-list" class="scroll-list"></div>
+                    <button class="btn secondary" data-screen="menu">VOLTAR</button>
+                </div>
+            </section>
+
+            <!-- TELA FÁRMACOS -->
+            <section id="screen-farmacos" class="screen hidden">
+                <div class="screen-card">
+                    <h2 class="subtitle">FÁRMACOS</h2>
+                    <div id="farmacos-list" class="scroll-list"></div>
+                    <button class="btn secondary" data-screen="menu">VOLTAR</button>
+                </div>
+            </section>
+
+            <!-- TELA LINKS -->
+            <section id="screen-links" class="screen hidden">
+                <div class="screen-card">
+                    <h2 class="subtitle">LINKS</h2>
+                    <button class="btn primary" id="btn-links-sistema">SISTEMA</button>
+                    <button class="btn primary" id="btn-links-pessoal">PESSOAL</button>
+                    <button class="btn secondary" data-screen="menu">VOLTAR</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="~/js/app.js"></script>
+</body>
+</html>

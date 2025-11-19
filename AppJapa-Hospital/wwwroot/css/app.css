@@ -1,0 +1,179 @@
+﻿/* Fundo totalmente preto */
+body.app-body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Esconde elementos quando necessário */
+.hidden {
+    display: none !important;
+}
+
+/* Overlay genérico (login, chave dinâmica etc.) */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9); /* fundo preto com transparência */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Cartões com fundo levemente translúcido */
+.card,
+.screen-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #444444;
+    border-radius: 10px;
+    padding: 20px 18px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+}
+
+/* Cabeçalhos */
+.title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.subtitle {
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Labels e inputs */
+.label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #555555;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.error-message {
+    min-height: 18px;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    color: #ff5555;
+    font-size: 13px;
+}
+
+/* Estrutura geral do app */
+.app-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    padding: 10px 16px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #333333;
+}
+
+    .app-header h1 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+.app-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+.screen {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Lista com rolagem interna */
+.scroll-list {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Estilo dos botões, semelhante ao ttkbootstrap "Botao.TButton" */
+.btn {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    background: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+    .btn.primary {
+    }
+
+    .btn.secondary {
+        border-color: #aaaaaa;
+    }
+
+    .btn:hover {
+        background: #333333;
+        transform: translateY(-1px);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+/* Tabela da chave dinâmica */
+.dynamic-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+}
+
+.dynamic-table th,
+.dynamic-table td {
+    border: 1px solid #666666;
+    padding: 6px;
+    text-align: center;
+}
+
+.dynamic-table th {
+    font-weight: bold;
+}
+
+/* Scrollbar mais discreta em navegadores que suportam */
+.scroll-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+    background: #111111;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 3px;
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E/Th7/6s7GQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\deivi\\source\\repos\\AppJapa-Hospital\\AppJapa-Hospital\\AppJapa-Hospital.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\deivi\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}
