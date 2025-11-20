@@ -31,3 +31,4 @@ C:\Users\deivi\source\repos\AppJapa-Hospital\AppJapa-Hospital\obj\Debug\net8.0\r
 C:\Users\deivi\source\repos\AppJapa-Hospital\AppJapa-Hospital\obj\Debug\net8.0\AppJapa-Hospital.pdb
 C:\Users\deivi\source\repos\AppJapa-Hospital\AppJapa-Hospital\obj\Debug\net8.0\AppJapa-Hospital.genruntimeconfig.cache
 C:\Users\deivi\source\repos\AppJapa-Hospital\AppJapa-Hospital\obj\Debug\net8.0\ref\AppJapa-Hospital.dll
+C:\Users\deivi\source\repos\AppJapa-Hospital\AppJapa-Hospital\obj\Debug\net8.0\AppJapa-Hospital.sourcelink.json

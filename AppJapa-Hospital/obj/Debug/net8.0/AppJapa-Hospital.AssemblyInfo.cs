@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppJapa-Hospital")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad4115839a094407772438376e9f08af891135fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppJapa-Hospital")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppJapa-Hospital")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
